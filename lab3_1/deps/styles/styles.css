@@ -1,0 +1,250 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.card-form, .card-display, .delete-area {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+}
+
+.card-form {
+    width: 300px;
+}
+
+.card-form input, .card-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.card-form button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.card-display {
+    width: 400px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-body h3 {
+    margin-bottom: 10px;
+}
+
+.card-body button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete-area {
+    width: 250px;
+    height: 250px;
+    background-color: #f28b82;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.card{
+    margin-top: 10px;
+}
+
+.sort{
+    margin-top: 40px;
+}
+
+
+
+/* Основні стилі */
+.tabs {
+    display: flex;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.tab {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    background-color: #f1f1f1;
+    margin-right: 10px;
+}
+
+.tab.active {
+    background-color: #fff;
+    border-top: 2px solid #333;
+}
+
+.tab-content {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    margin-top: 60px; /* Щоб контент не перекривався вкладками */
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Додаткові стилі для карток та форми */
+.card-display h1, .card-form h2 {
+    margin-bottom: 20px;
+}
+
+input, textarea, button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 16px;
+}
+
+button {
+    cursor: pointer;
+    background-color: #333;
+    color: #fff;
+    border: none;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+.sort {
+    margin-top: 20px;
+}
+
+.delete-area {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #ffdddd;
+    border: 1px dashed #f00;
+    text-align: center;
+    color: #900;
+}
+
+/* Стилі для модального вікна */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    max-width: 100%;
+}
+
+.close-button {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+}
+
+.modal {
+    display: none; /* Приховано за замовчуванням */
+    position: fixed; /* Залишається на місці при скролі сторінки */
+    z-index: 1; /* Перекриває інші елементи */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ширина екрану */
+    height: 100%; /* Висота екрану */
+    overflow: auto; /* Додає скрол, якщо контент виходить за межі */
+    background-color: rgba(0, 0, 0, 0.5); /* Напівпрозоре чорне тло */
+}
+
+.modal-content {
+    position: absolute;
+    background-color: #fff;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Можна змінити під ваш дизайн */
+    max-width: 600px; /* Максимальна ширина для зручності */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Центрування по вертикалі і горизонталі */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
